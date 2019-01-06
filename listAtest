@@ -1,0 +1,26 @@
+from operator import itemgetter, attrgetter
+# fctns for alphabetical order
+from prettytable import PrettyTable
+from prettytable import from_csv
+# functions for decoration (prettytable)
+
+
+t = []
+# initializing list
+
+spam = open('listAtest')
+x = from_csv(spam)
+# csv reading with pretty table fctns
+
+fin = open('listAtest')
+for line in fin:
+    word = line.strip()
+    t.append(word)
+# list reading in py with for loop
+print(sorted(t, key=itemgetter(0)))
+# sorted alphabetically
+
+print(x)
+#decorated with prettytable
+fin.close()
+#always close the file
